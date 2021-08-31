@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 100f;
-    [SerializeField] private float _speed;
     [SerializeField] private SliderChanger _slider;
 
     private float _currentHealth;
@@ -14,12 +13,12 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
-        SettingProgress(_maxHealth);
+        _slider.SetMaxProgress(_maxHealth);
     }
 
     private void Update()
     {
-        _slider.HandleBar(_currentHealth, _speed);
+        _slider.SetProgress(_currentHealth);
     }
 
     public void TakeDamage()
