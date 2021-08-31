@@ -6,29 +6,20 @@ using UnityEngine.UI;
 public class SliderChanger : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private float _speed;
 
-    private float _currentProgress;
-
-    private void Update()
+    public void SetMaxProgress(float progress)
     {
-        HandleBar();
+        _slider.maxValue = progress;
+        _slider.value = progress;
     }
 
-    public void IncreaseSlider()
+    public void SetProgress(float progress)
     {
-        _currentProgress += 10;
-        HandleBar();
+        _slider.value = progress;
     }
 
-    public void DecreaseSlider()
+    public void HandleBar(float progress, float speed)
     {
-        _currentProgress -= 10;
-        HandleBar();
-    }
-
-    public void HandleBar()
-    {
-        _slider.value = Mathf.MoveTowards(_slider.value, _currentProgress, _speed * Time.deltaTime);
+        _slider.value = Mathf.MoveTowards(_slider.value, progress, speed * Time.deltaTime);
     }
 }
