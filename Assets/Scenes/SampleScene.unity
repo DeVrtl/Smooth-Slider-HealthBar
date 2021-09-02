@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 121907658}
+  _speed: 2
 --- !u!114 &121907658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +776,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _slider: {fileID: 121907657}
-  _speed: 2
 --- !u!4 &987923070
 Transform:
   m_ObjectHideFlags: 0
