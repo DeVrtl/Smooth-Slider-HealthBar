@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
 
     public float MaxHealth => _maxHealth;
 
+    public void CurrentHealth()
+    {
+        _maxHealth = _currentHealth;
+    }
+
     public void TakeDamage()
     {
         _currentHealth -= _templateNumber;
