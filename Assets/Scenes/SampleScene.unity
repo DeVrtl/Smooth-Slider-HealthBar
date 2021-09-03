@@ -775,6 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987923070}
   - component: {fileID: 987923069}
+  - component: {fileID: 987923071}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -794,6 +795,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17191d849ec0552449e6f1670cc01559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHealthEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987923071}
+        m_MethodName: CurrentHealthEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &987923070
 Transform:
   m_ObjectHideFlags: 0
@@ -808,6 +823,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987923071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987923068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64f17f95501c174db78aea3841d1c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 121907658}
 --- !u!1 &1284242129
 GameObject:
   m_ObjectHideFlags: 0
