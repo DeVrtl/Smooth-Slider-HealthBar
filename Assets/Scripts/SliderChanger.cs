@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderChanger : MonoBehaviour
+public abstract class SliderChanger : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
+    [SerializeField] protected Slider _slider;
     [SerializeField] private float _speed;
 
-    private Player _player;
-
-    public void SetProgress(float progress)
+    public void SetProgress(float value, float maxValue)
     {
-        _slider.maxValue = _player.MaxHealth;
-        _slider.value = Mathf.MoveTowards(_slider.value, progress, _speed * Time.deltaTime);
+        _slider.value = Mathf.MoveTowards(_slider.value, maxValue / value, _speed * Time.deltaTime);
     }
 }
