@@ -5,23 +5,28 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    private float _maxHealth;
-    private float _templateNumber = 10;
-    private float _currentHealth;
+    [SerializeField] private float _health;
 
-    public event UnityAction<float ,float> HealthChanged;
+    private float _templateNumber = 10;
+
+    public event UnityAction<float> HealthChanged;
+
+    public float Health => _health;
+
+    private void Start()
+    {
+        HealthChanged?.Invoke(_health);
+    }
 
     public void TakeDamage()
     {
-        _currentHealth -= _templateNumber;
-        _maxHealth = _currentHealth;
-        HealthChanged?.Invoke(_maxHealth, _currentHealth);
+        _health -= _templateNumber;
+        HealthChanged?.Invoke(_health);
     }
 
     public void Heal()
     {
-        _currentHealth += _templateNumber;
-        _maxHealth = _currentHealth;
-        HealthChanged?.Invoke(_maxHealth, _currentHealth);
+        _health += _templateNumber;
+        HealthChanged?.Invoke(_health);
     }
 }
