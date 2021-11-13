@@ -21,12 +21,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        _slider.maxValue = _player.Health;
-    }
-
-    private void Update()
-    {
-        OnHealthChanged(_player.Health);
+        _slider.maxValue = _player.MaxHealth;
     }
 
     private void OnHealthChanged(float health)
